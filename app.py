@@ -29,11 +29,27 @@ def game_loop(modifiedline1, modifiedline2, modifiedline3, is_x):
         if currentMove[0] == '3':
             modifiedline1 = (modifiedline1[0:4] + playingpiece)
 
+    if currentMove[2] == '2':
+        if currentMove[0] == '1':
+            modifiedline2 = (playingpiece + modifiedline2[1:5])
+        if currentMove[0] == '2':
+            modifiedline2 = (modifiedline2[0:2] + playingpiece + modifiedline2[3:5])
+        if currentMove[0] == '3':
+            modifiedline2 = (modifiedline2[0:4] + playingpiece)
+
+    if currentMove[2] == '3':
+        if currentMove[0] == '1':
+            modifiedline3 = (playingpiece + modifiedline3[1:5])
+        if currentMove[0] == '2':
+            modifiedline3 = (modifiedline3[0:2] + playingpiece + modifiedline3[3:5])
+        if currentMove[0] == '3':
+            modifiedline3 = (modifiedline3[0:4] + playingpiece)
+
     if is_x == True:
         is_x = False
     else:
         is_x = True
-        
+
     game_loop(modifiedline1, modifiedline2, modifiedline3, is_x)
 
 game_loop(line1, line2, line3, is_X)
